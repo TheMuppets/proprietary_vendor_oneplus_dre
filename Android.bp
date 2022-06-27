@@ -21241,6 +21241,57 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "lib_lvacfs",
+    owner: "oneplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/odm/lib/lib_lvacfs.so",
+            ],
+            shared_libs: [
+                "libcutils",
+                "libc",
+                "libc++",
+                "libdl",
+                "libm",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    device_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "liblvacfs_wrapper",
+    owner: "oneplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/odm/lib/liblvacfs_wrapper.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "lib_lvacfs",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    device_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "anc.hal",
     owner: "oneplus",
     strip: {
