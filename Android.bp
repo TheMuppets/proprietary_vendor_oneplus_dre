@@ -17741,34 +17741,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.qti.hardware.radio.atcmdfwd@1.0",
-    owner: "oneplus",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/vendor.qti.hardware.radio.atcmdfwd@1.0.so",
-            ],
-            shared_libs: [
-                "libhidlbase",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "vendor.qti.hardware.radio.ims@1.0",
     owner: "oneplus",
     strip: {
@@ -23796,43 +23768,6 @@ prebuilt_etc_xml {
     filename_from_src: true,
     sub_dir: "vintf/manifest",
     device_specific: true,
-}
-
-cc_prebuilt_binary {
-    name: "ATFWD-daemon",
-    owner: "oneplus",
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/bin/ATFWD-daemon",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libutils",
-                "libqmi",
-                "libmdmdetect",
-                "libqmi_client_qmux",
-                "libqmi_client_helper",
-                "libqmiservices",
-                "libqmi_cci",
-                "liblog",
-                "libavservices_minijail",
-                "libbase",
-                "libhidlbase",
-                "vendor.qti.hardware.radio.atcmdfwd@1.0",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    strip: {
-        none: true,
-    },
-    prefer: true,
-    soc_specific: true,
 }
 
 cc_prebuilt_binary {
