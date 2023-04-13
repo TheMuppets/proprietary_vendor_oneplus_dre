@@ -61,6 +61,11 @@ case "$target" in
         esac
         ;;
     "holi")
+        case "$soc_hwid" in
+            454|472)
+                setprop vendor.netflix.bsp_rev "Q4350-32962-1"
+                ;;
+        esac
         setprop vendor.media.target_variant "_holi"
         ;;
     "msmnile")

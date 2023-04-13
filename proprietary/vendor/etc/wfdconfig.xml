@@ -135,11 +135,8 @@
         <!--
             Standby Resume capability is supported
         -->
-        <!--
-            neil.sun@Connectivity, 2020/11/06, [Porting] fix dongle side display issue if trun off/on screen on
-        -->
         <StandbyResumeCapability>
-            <Valid>0</Valid>
+            <Valid>1</Valid>
         </StandbyResumeCapability>
 
         <!--
@@ -163,12 +160,12 @@
 
         <!--  disable HDCP by default -->
         <ContentProtection>
-            <Valid>1</Valid>
+            <Valid>0</Valid>
             <!--
                 Valid values WFD_HDCP_2_0,
                 WFD_HDCP_2_1 and WFD_HDCP_2_2
             -->
-            <Version>WFD_HDCP_2_3</Version>
+            <Version>WFD_HDCP_2_2</Version>
             <CPPort>6789</CPPort>
             <!--
                 turn on/off audio encryption
@@ -190,15 +187,12 @@
         <!--
             UIBC settings
         -->
-        <!--
-           neil.sun@Connectivity, 2020/11/06, [Porting] increase compatibility when cast to windows OS
-        -->
         <UIBC>
             <UIBCValid>1</UIBCValid>                <!-- UIBC by default enabled -->
-            <M4Enable>0</M4Enable>                  <!-- 0/1 send UIBC enable in M4 or not -->
+            <M4Enable>1</M4Enable>                  <!-- 0/1 send UIBC enable in M4 or not -->
             <M14Support>0</M14Support>              <!-- 0/1 M14 supported or not -->
             <InputCategory>
-                <Generic>0</Generic>                <!-- 0/1 - support generic or not -->
+                <Generic>1</Generic>                <!-- 0/1 - support generic or not -->
                 <HID>1</HID>                        <!-- 0/1 - support HID or not -->
             </InputCategory>
 
@@ -710,7 +704,10 @@
         To disable/enable audio stream playback
         support during power suspend - 0 or 1
     -->
-    <AudioStreamInSuspend>0</AudioStreamInSuspend>
+    <!-- #ifdef OPLUS_BUG_STABILITY -->
+    <!-- Zhicheng.Luo@MULTIMEDIA.AUDIOSERVER.FRAMEWORK.622855, 2020/11/10, Modify for audio should still playing on TV after screen off -->
+    <AudioStreamInSuspend>1</AudioStreamInSuspend>
+    <!-- #endif OPLUS_BUG_STABILITY -->
 
     <!--
         Compensation delay for audio

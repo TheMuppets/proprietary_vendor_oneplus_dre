@@ -25,7 +25,6 @@
             // It is used to enable fastCV engine for flip support in the absence of VPSS hardware
             // support.
             "enc_vpss_flip": true,
-            "pipelining": true
             // This is used to limit secure usecase buffer count. Changes dynamic to static count
             "dec_secure_static_count": false
         },

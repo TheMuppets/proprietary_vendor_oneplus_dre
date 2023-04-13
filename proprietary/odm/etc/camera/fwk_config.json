@@ -1,0 +1,435 @@
+{
+    "default": {
+        "feature_motor_enable": false,
+        "feature_aps_enable": true,
+        "feature_auth_enable": true,
+        "feature_cts_enable": true,
+        "feature_3a_enable": true,
+        "feature_evication_enable": true,
+        "isSkipfusion": true,
+        "feature_resolution_enable": true,
+        "feature_government_enalbe": true,
+        "feature_sound_enable": true,
+        "feature_flash_enable": true,
+        "feature_fps_enable": true,
+        "feature_rio_enable": true,
+        "up_motor_in_configure": [
+            "com.eric.soft",
+            "com.tencent.mobileqq",
+            "vStudio.Android.Camera360",
+            "com.qihoo.magic",
+            "com.happyelements.AndroidClover.nearme.gamecenter",
+            "com.qzone",
+            "com.yek.android.uniqlo",
+            "com.netease.l10.nearme.gamecenter",
+            "com.zhonglian.diandian",
+            "com.yunlian.wewe",
+            "com.yongqianbao.credit",
+            "com.shouji2345",
+            "com.paraken.jipai",
+            "com.szzc",
+            "com.tencent.qqpim",
+            "com.mykj.game.ddz",
+            "com.wangling.alarmeye",
+            "com.bankcomm.Bankcomm",
+            "com.hd.fly.flashlight",
+            "com.cmri.universalapp",
+            "com.ss.android.eyeu",
+            "com.tencent.tmgp.hlxq",
+            "com.tencent.WBlog",
+            "cn.opda.a.phonoalbumshoushou",
+            "com.aisaosao.isaosao",
+            "com.cqgk.clerk",
+            "com.amii.plus",
+            "com.game.juba",
+            "com.happyelements.AndroidClover.www",
+            "com.sloth.removelogo",
+            "com.xvideostudio.videoeditor",
+            "com.controlcenter.inotifyx.notificationosx",
+            "cn.ecook",
+            "com.eybond.smartclient",
+            "com.newland.mbop",
+            "com.kcwangluo",
+            "com.kh.phonelive",
+            "com.ict.fcc",
+            "com.forward.eip",
+            "com.ahzs.ruanyou",
+            "com.beihai365.Job365",
+            "com.facishare.fs",
+            "com.sharetimes.miliao",
+            "com.woyinqianbao.zhifu.fx",
+            "com.huamaitel.yunding",
+            "com.hunan",
+            "com.kdige.www",
+            "com.scities.user",
+            "com.godimage.knockout.free.cn",
+            "com.ccclubs.changan",
+            "cn.zuofanping",
+            "com.gxrcw.activity",
+            "cn.trackview.shentan",
+            "com.cateater.stopmotionstudio",
+            "cn.estronger.bike",
+            "com.sn.vhome",
+            "com.mayt.ai.idcardrecognition",
+            "com.ss.android.ugc.aweme",
+            "com.taichuan.anfu",
+            "com.gywjw.chsapp",
+            "com.cy.cyd",
+            "com.ludashi.benchmarkpro",
+            "cn.com.smartbi",
+            "com.livecom",
+            "com.sdjd.credit",
+            "net.gemeite.smartcommunity",
+            "com.jimu.adas",
+            "com.sendtion.timenote",
+            "com.uxin.live.assistant",
+            "cn.ecookmeishi",
+            "com.taichuan.cocmuh",
+            "com.feinno.digitallife",
+            "cn.ecookzuocaiba",
+            "com.view.asim",
+            "com.newsmy.temp",
+            "com.tencent.tmgp.jjbycjb",
+            "com.ytdinfo.keephealth",
+            "com.nxz.nxz2017",
+            "com.speedbooster.optimizer",
+            "com.videomaker.editor.slideshow",
+            "com.fbank.mobile",
+            "com.careate.qyi",
+            "com.anyisheng.doctoran",
+            "com.colorphone.smooth.dialer",
+            "com.yibaofu.oemtwo",
+            "com.yy.android.tutor.student",
+            "com.mfxskd",
+            "com.feiin.wldh",
+            "com.li.videoapplication",
+            "com.fmcc.video",
+            "com.cmri.chiNAmobile",
+            "com.pp.TimelyLoan",
+            "com.sinolife.app",
+            "com.carelinker.pharmacy.v2",
+            "com.meetstudio.app.Zither",
+            "com.ak.zanjiahealth",
+            "com.fourcall.wldh",
+            "com.lianjia.alliance",
+            "com.mengsiben.game.ddz.nearme.gamecenter",
+            "com.boxfish.stu",
+            "cn.vcinema.cinema",
+            "com.kascend.chushou.lu",
+            "com.pxkjformal.parallelcampus",
+            "com.yaloe.newclient_8647",
+            "cn.com.jmw.m",
+            "com.derekr.AngleCam",
+            "com.happyelements.AndroidClover.mob",
+            "flar2.devcheck",
+            "com.tencent.mtt",
+            "com.wondertek.miguaikan",
+            "air.com.empiregames.fungirlgames",
+            "cn.net.cyberway",
+            "net.cybrook.trackview",
+            "com.fingerchat.hulian",
+            "com.soufun.app",
+            "com.kiloo.subwaysurf",
+            "com.banshenghuo.mobile",
+            "com.cmcm.live",
+            "sg.bigo.live",
+            "cn.ecookthree",
+            "com.yealink.videophone",
+            "com.kbridge.communityowners",
+            "com.kkgames.MeiRenYuGongZhuDeHunLi",
+            "my.PCamera",
+            "cn.trackview.findphone",
+            "com.linecorp.b612.android",
+            "com.exutech.chacha",
+            "com.tencent.ttpic",
+            "com.jiochat.jiochatapp",
+            "com.leo.appmaster",
+            "com.camera.beautycam",
+            "com.neptune.camera",
+            "kr.drct.dsanapps",
+            "com.MariiaKovalchuk.lesbianvideochatdating",
+            "com.celcom.yoodo",
+            "com.wecut.vapor",
+            "com.vaultmicro.camerafi.live",
+            "com.camera.gistacanon2",
+            "org.potato.messenger",
+            "video.chat.girls.boys.friends",
+            "com.zenaapps.backgroundvideorecorder",
+            "com.olx.southasia",
+            "ar.com.moula.zoomcamera",
+            "com.ganji.android",
+            "com.myfrustum.rinpoche",
+            "cn.com.gtcom.ydt",
+            "com.sdjx.zhwy",
+            "org.xinkb.blackboard.android",
+            "com.jkx5da.client",
+            "com.foodbus.dianzhuang",
+            "com.dianping.v1",
+            "com.gzlx.eduparent",
+            "com.joinbanker.treasure",
+            "com.yunxuetang.huihui",
+            "com.txt.picc",
+            "com.kuaibao.kuaidi",
+            "us.pinguo.selfie",
+            "com.kxloye.www.loye",
+            "com.jianhai.health.activiy",
+            "air.tv.douyu.android",
+            "com.fotoable.fotobeauty",
+            "com.tencent.qqlivebroadcast",
+            "com.duowan.mobile",
+            "com.snapchat.android",
+            "com.hayl.smartvillage",
+            "com.videofx",
+            "com.google.android.apps.fireball",
+            "com.theronrogers.vaultyfree",
+            "com.dwd.rider",
+            "air.com.gongfubb.wksz",
+            "com.tencent.mobileqq",
+            "com.sn.camera",
+            "com.haier.rrs.driver",
+            "com.focustech.xyz",
+            "com.nahaowan.posepaipai",
+            "com.mifeng.ui",
+            "com.yitong.gansu.mobilebank",
+            "com.douxim.frontbackflashnotification",
+            "com.instagram.android"
+        ],
+        "limit_3rd_app_size": [
+            "com.mt.mtxx.mtxx.sub.preview",
+            "com.benqu.wuta.sub.preview",
+            "com.huajiao.camera.sub.preview",
+            "com.tencent.funcam.sub.preview",
+            "com.mt.mtxx.mtxx.main.preview",
+            "com.benqu.wuta.main.preview",
+            "com.huajiao.camera.main.preview",
+            "com.gorgeous.lite.main.preview",
+            "com.meitu.meiyancamera.main.preview",
+            "com.meitu.wheecam.main.preview",
+            "com.huajiao.camera.sub.Texture"
+        ],
+        "limit_3rd_app_size_byLevel": [
+            "autotest.oplus.com.simulatedlivebroadcast.level1",
+            "com.fingogroup.fingo.level1",
+            "com.rapido.rider.level1"
+        ],
+        "skip_rus_check_list": [
+            "android.camera.cts",
+            "com.android.cts.verifier",
+            "android",
+            "com.oplus.engineercamera"
+        ],
+        "disable_camera_shutter_sound_app_list": [
+            "com.facebook.orca",
+            "com.facebook.orca",
+            "com.instagram.android",
+            "com.facebook.katana"
+        ],
+        "defaultMaxPreviewWidth": 3168,
+        "defaultMaxPreviewHeight": 3168,
+        "resolutionFilterForNotAddSizeAPI1": [
+            "4608x3456",
+            "4160x3120",
+            "4160x2340",
+            "4096x2160",
+            "2688x1512",
+            "2592x1940",
+            "2592x1458",
+            "2592x1232",
+            "2592x1196",
+            "2560x1920"
+        ]
+    },
+    "org.codeaurora.ims": {
+        "isFreeDomEvictionPackge": true
+    },
+    "android": {
+        "isFreeDomEvictionPackge": true
+    },
+    "com.tencent.mm": {
+        "previewSizeForAPI1Width": 1920,
+        "previewSizeForAPI1Height": 1080,
+        "app_enable_rio": true
+    },
+    "com.tencent.zebra": {
+        "previewSizeForAPI1Width": 1920,
+        "previewSizeForAPI1Height": 1080
+    },
+    "com.marykay.vmo.my": {
+        "previewSizeForAPI1Width": 1920,
+        "previewSizeForAPI1Height": 1080
+    },
+    "net.one97.paytm": {
+        "previewSizeForAPI1Width": 1920,
+        "previewSizeForAPI1Height": 1080
+    },
+    "im.thebot.messenger": {
+        "previewSizeForAPI1Width": 1920,
+        "previewSizeForAPI1Height": 1080,
+        "needLimitFpsForAPI1": true
+    },
+    "com.alibaba.android.rimet": {
+        "previewSizeForAPI1Width": 1920,
+        "previewSizeForAPI1Height": 1080
+    },
+    "com.heytap.browser": {
+       "previewSizeForAPI1Width": 1600,
+       "previewSizeForAPI1Height": 720
+    },
+    "com.kufeng.hj.enjoy": {
+        "previewSizeForAPI1Height": 1080
+    },
+    "com.commsource.beautyplus": {
+        "previewSizeForAPI1Width": 1440,
+        "previewSizeForAPI1Height": 1080
+    },
+    "com.tencent.mobileqq": {
+        "app_enable_rio": true
+    },
+    "com.ss.android.ugc.aweme": {
+        "app_enable_rio": true
+    },
+    "com.facebook.katana": {
+        "app_enable_rio": true
+    },
+    "com.facebook.orca": {
+        "app_enable_rio": true
+    },
+    "com.whatsapp.w4b": {
+        "app_enable_rio": true
+    },
+    "com.instagram.android": {
+        "app_enable_rio": true
+    },
+    "com.ss.android.ugc.trill": {
+        "app_enable_rio": true
+    },
+    "com.oplus.engineercamera": {
+        "resolutionFilterForNotAddSizeAPI1": [
+            "4608x3456",
+            "4160x3120",
+            "4160x2340",
+            "4096x2160",
+            "2688x1512",
+            "2592x1944",
+            "2592x1940",
+            "2592x1458",
+            "2592x1232",
+            "2592x1196",
+            "2592x1920"
+        ]
+    },
+    "com.githcode.trend.camera": {
+        "resolutionFilterForNotAddSizeAPI1": [
+            "1600x1200"
+        ]
+    },
+    "net.sourceforge.opencamera": {
+        "resolutionFilterForNotAddSizeAPI1": [
+            "1600x1200"
+        ]
+    },
+    "com.facebook.orca": {
+        "resolutionFilterForNotAddSizeAPI1": [
+            "1600x1200"
+        ]
+    },
+    "my.beautyCamera": {
+        "resolutionFilterForNotAddSizeAPI1": [
+            "4000x3000",
+            "3264x2448",
+            "3200x2400"
+        ]
+    },
+    "com.google.android.apps.messaging": {
+        "resolutionFilterForNotAddSizeAPI1": [
+            "4160x2336"
+        ]
+    },
+    "com.twitter.android": {
+        "maxRatioFilterForNotAddSizeAPI1": 177,
+        "minRatioFilterForNotAddSizeAPI1": 133,
+        "needLimitFpsForAPI1": true
+    },
+    "com.whatsapp": {
+        "maxPreviewWidthForAPI2cameraId0": 3840,
+        "maxPreviewHeightForAPI2cameraId0": 2160,
+        "maxPreviewWidthForAPI2cameraId1": 2304,
+        "maxPreviewHeightForAPI2cameraId1": 1728,
+        "app_enable_rio": true,
+        "forceLimitSurfaceRatio": true,
+        "limitPicture": true
+    },
+    "com.tencent.wework": {
+        "needLimitFpsForAPI1": true
+    },
+    "com.skype.raider": {
+        "needLimitFpsForAPI1": true
+    },
+    "com.vkontakte.android": {
+        "needLimitFpsForAPI1": true
+    },
+    "jp.naver.linecamera.android": {
+        "needLimitFpsForAPI1": true
+    },
+    "com.blink.academy.nomopro": {
+        "needLimitFpsForAPI1": true
+    },
+    "com.microsoft.office.excel": {
+        "needLimitFpsForAPI1": true
+    },
+    "com.microsoft.office.word": {
+        "needLimitFpsForAPI1": true
+    },
+    "com.microsoft.office.outlook": {
+        "needLimitFpsForAPI1": true
+    },
+    "com.microsoft.office.powerpoint": {
+        "needLimitFpsForAPI1": true
+    },
+    "com.microsoft.office.officehubrow": {
+        "needLimitFpsForAPI1": true
+    },
+    "com.microsoft.teams": {
+        "needLimitFpsForAPI1": true
+    },
+    "com.eg.android.AlipayGphone": {
+        "needLimitFpsForAPI1": true
+    },
+    "com.smile.gifmaker": {
+        "app_enable_rio": true,
+        "adjustInvalidFpsForAPI1": true
+    },
+    "com.youku.crazytogether": {
+        "checkToAddPreviewCallbackForAPI1": true
+    },
+    "com.taobao.idlefish": {
+        "checkToAddPreviewCallbackForAPI1": true
+    },
+    "com.alibaba.android.rimet": {
+        "checkToAddPreviewCallbackForAPI1": true
+    },
+    "com.taobao.taobao": {
+        "checkToAddPreviewCallbackForAPI1": true
+    },
+    "com.example.anchortooldemo": {
+        "checkToAddPreviewCallbackForAPI1": true
+    },
+    "com.eg.android.AlipayGphone": {
+        "checkToAddPreviewCallbackForAPI1": true
+    },
+    "vStudio.Android.Camera360": {
+        "checkToAddPreviewCallbackForAPI1": true
+    },
+    "weet.selfie.classic": {
+        "checkToAddPreviewCallbackForAPI1": true
+    },
+    "sweet.selfie.lite": {
+        "checkToAddPreviewCallbackForAPI1": true
+    },
+    "com.tencent.now": {
+        "checkToAddPreviewCallbackForAPI1": true
+    },
+    "autotest.oppo.com.simulatedlivebroadcast": {
+        "needAllPreviewSizeForAPI1": true
+    }
+}

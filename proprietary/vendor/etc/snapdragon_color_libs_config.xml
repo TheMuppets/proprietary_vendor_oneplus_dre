@@ -31,7 +31,5 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <Library>
         <Name>libsnapdragoncolor-qdcm.so</Name>
         <ProcessingOrder>1</ProcessingOrder>
-		<DisableColorTransform>false</DisableColorTransform>
-        <DisableLibrary>false</DisableLibrary>
     </Library>
 </StcLibraries>

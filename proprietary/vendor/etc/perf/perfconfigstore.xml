@@ -25,7 +25,7 @@ property Name is called. -->
                Variant=bengal       -> bengal 64 bit target
     Resolution="1080p", "2560", "720p", "HD+"
     Kernel: kernel version, examples: "4.19", "5.4", etc
-    Ram: ram size in GB, examples: "1","2","3","4" (4 for target with >= 4GB of RAM as well)
+    Ram: ram size in GB, examples: "1","2","3","4","6","8","10","12" (12 for target with >= 12GB of RAM as well)
 _______________________________________________________________________________________________ -->
 
 <PerfConfigsStore>
@@ -33,7 +33,7 @@ ________________________________________________________________________________
 
                 <!--Vendor Properties -->
                 <Prop Name="vendor.debug.enable.lm" Value="true" />
-                <Prop Name="vendor.iop.enable_uxe" Value="0" />
+                <Prop Name="vendor.iop.enable_uxe" Value="1" />
                 <Prop Name="vendor.enable.prefetch" Value="false" />
                 <Prop Name="vendor.iop.enable_prefetch_ofr" Value="0" />
                 <Prop Name="vendor.perf.iop_v3.enable" Value="false" />
@@ -42,8 +42,9 @@ ________________________________________________________________________________
                 <Prop Name="vendor.perf.pfar.enable" Value="1"/>
                 <Prop Name="vendor.perf.fps_switch.enable" Value="1"/>
                 <Prop Name="ro.vendor.perf.gfl.tap_ignore_enable" Value="true"/>
-                <Prop Name="ro.vendor.perf.wlc.heavygame" Value="true"/>
+                <Prop Name="ro.vendor.perf.wlc.heavygame" Value="true" Target="holi"/>
                 <Prop Name="ro.vendor.perf.splh" Value="none"/>
+                <Prop Name="vendor.perf.fps_switch_hyst_time_secs" Value="10" />
 
                 <!--System Properties -->
                 <Prop Name="ro.vendor.qti.sys.fw.bservice_age" Value="300000" />
@@ -56,24 +57,28 @@ ________________________________________________________________________________
                 <Prop Name="ro.vendor.qti.sys.fw.trim_enable_memory" Value="4294967296" />
                 <Prop Name="ro.vendor.qti.am.reschedule_service" Value="true" />
                 <Prop Name="ro.vendor.iocgrp.config" Value="1" />
-                <Prop Name="ro.lmk.use_new_strategy_dup" Value="false" />
                 <Prop Name="ro.lmk.kill_heaviest_task_dup" Value="true" />
                 <Prop Name="ro.lmk.kill_timeout_ms_dup" Value="100" />
                 <Prop Name="ro.lmk.thrashing_threshold" Value="30" />
                 <Prop Name="ro.lmk.thrashing_decay" Value="5" />
                 <Prop Name="ro.lmk.nstrat_low_swap" Value="10" />
-                <Prop Name="ro.lmk.nstrat_wmark_boost_factor" Value="1" />
+                <Prop Name="ro.lmk.nstrat_wmark_boost_factor" Value="4" />
                 <Prop Name="ro.lmk.enhance_batch_kill" Value="false" />
                 <Prop Name="ro.lmk.enable_watermark_check" Value="true" />
-                <Prop Name="ro.lmk.enable_userspace_lmk" Value="true" />
                 <Prop Name="ro.lmk.enable_preferred_apps"   Value="true" />
-                <Prop Name="ro.lmk.super_critical" Value="701" />
+                <Prop Name="ro.lmk.use_new_strategy_dup" Value="true" />
+		<Prop Name="ro.lmk.super_critical" Value="701" />
                 <Prop Name="vendor.perf.gestureflingboost.enable" Value="true" />
+                <!--#ifndef  OPLUS_FEATURE_PERFORMANCE-->
+                <!--liuyun@ANDROID.PERFORMANCE, 2020/11/02, Modify for cached app limit for 4350R-->
+                <!--<Prop Name="ro.vendor.qti.sys.fw.bg_apps_limit" Value="60" />-->
+                <!--#else-->
                 <Prop Name="ro.vendor.qti.sys.fw.bg_apps_limit" Value="16" />
+                <!--#endif /* OPLUS_FEATURE_PERFORMANCE */ -->
                 <Prop Name="ro.vendor.at_library" Value="libqti-at.so" />
-                <Prop Name="vendor.appcompact.enable_app_compact" Value="true" />
+                <Prop Name="vendor.appcompact.enable_app_compact" Value="false" />
                 <Prop Name="vendor.appcompact.full_compact_type"  Value="2" />
-                <Prop Name="vendor.appcompact.some_compact_type"  Value="2" />
+                <Prop Name="vendor.appcompact.some_compact_type"  Value="4" />
                 <Prop Name="vendor.appcompact.compact_throttle_somesome" Value="5000" />
                 <Prop Name="vendor.appcompact.compact_throttle_somefull" Value="10000" />
                 <Prop Name="vendor.appcompact.compact_throttle_fullsome" Value="500" />

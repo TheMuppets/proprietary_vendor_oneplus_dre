@@ -65,9 +65,6 @@ message sns_proximity_event
 
   // Proximity sensor sample status
   required sns_std_sensor_sample_status status = 3 [default = SNS_STD_SENSOR_SAMPLE_STATUS_UNRELIABLE];
-  // Proimity sensor offset
-  required uint32 offset = 4 [default = 0];
-
 }
 
 message sns_proximity_event_recurrent

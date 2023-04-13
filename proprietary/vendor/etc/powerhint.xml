@@ -317,30 +317,6 @@
             0x40C68130, -10, 0x40C68000, -10, 0x40C68010, -10, 0x40C68020, -10, 0x40C68030, -10,
             0x40800100, 1190, 0x43034000, 0x32, 0x43020000, 0x64, 0x43014000, 0x0, 0x41000100, 6"/>
 
-        <!-- camera portrait preview -->
-        <!--L CPU CORE 0 SCHED LOAD BOOST -->
-        <!--L CPU CORE 1 SCHED LOAD BOOST -->
-        <!--L CPU CORE 2 SCHED LOAD BOOST -->
-        <!--L CPU CORE 3 SCHED LOAD BOOST -->
-        <!--L CPU CORE 4 SCHED LOAD BOOST -->
-        <!--L CPU CORE 5 SCHED LOAD BOOST -->
-        <!--L CPU CORE 6 SCHED LOAD BOOST -->
-        <!--L CPU CORE 7 SCHED LOAD BOOST -->
-        <!-- B CPU - Cluster max freq ~1.401 Ghz -->
-        <!-- L CPU - Cluster max freq ~1.324 Ghz -->
-        <!--L CPU Hispeed freq of 1190Mhz -->
-        <!--L CLUSTER_LITTLE - Set hispeed load 95 -->
-        <!--L CLUSTER_BIG - Set hispeed load 95 -->
-        <!--CPUBW HWMON - Set sample_ms 50 -->
-        <!--CPUBW HWMON - Set io_percent 100 -->
-        <!--CPUBW HWMON - Set up_scale 0 -->
-        <!--L CPU core ctl min cpus 6 -->
-        <Config
-            Id="0x00001337" Enable="true" Timeout="0" Target="holi"
-            Resources="0x40C68100, -12, 0x40C68110, -12, 0x40C68120, -12,
-            0x40C68130, -12, 0x40C68000, -12, 0x40C68010, -12, 0x40C68020, -12, 0x40C68030, -12, 0x40804000, 0xfff, 0x40804100, 0xfff,
-            0x4143C100, 1190, 0x41440100, 0x5F, 0x41440000, 0x5F, 0x43034000, 0x32, 0x43020000, 0x64, 0x43014000, 0x0, 0x41000100, 6"/>
-
     </Powerhint>
 </HintConfigs>
 
