@@ -796,7 +796,6 @@ PRODUCT_COPY_FILES += \
     vendor/oneplus/dre/proprietary/vendor/etc/sensors/proto/sns_ultra_violet.proto:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/proto/sns_ultra_violet.proto \
     vendor/oneplus/dre/proprietary/vendor/etc/sensors/proto/sns_wrist_tilt_gesture.proto:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/proto/sns_wrist_tilt_gesture.proto \
     vendor/oneplus/dre/proprietary/vendor/etc/sensors/sns_reg_config:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/sns_reg_config \
-    vendor/oneplus/dre/proprietary/vendor/etc/snapdragon_color_libs_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/snapdragon_color_libs_config.xml \
     vendor/oneplus/dre/proprietary/vendor/etc/ssg/ta_config.json:$(TARGET_COPY_OUT_VENDOR)/etc/ssg/ta_config.json \
     vendor/oneplus/dre/proprietary/vendor/etc/ssg/tz_whitelist.json:$(TARGET_COPY_OUT_VENDOR)/etc/ssg/tz_whitelist.json \
     vendor/oneplus/dre/proprietary/vendor/etc/thermal-engine.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine.conf \
@@ -1185,7 +1184,6 @@ PRODUCT_PACKAGES += \
     libcvpcpuRev_skel \
     libdataitems \
     libdisp-aba \
-    libdisplayconfig.qti \
     libdisplayqos \
     libdisplayskuutils \
     libdpmqmihal \
@@ -1262,7 +1260,6 @@ PRODUCT_PACKAGES += \
     libqcrildatactl \
     libqdcm-mode-parser \
     libqdma_file_agent \
-    libqdutils \
     libqisl \
     libqll10 \
     libqllengine \
@@ -1285,14 +1282,11 @@ PRODUCT_PACKAGES += \
     librilqmimiscservices \
     librilqmiservices \
     librpmb \
-    libsdedrm \
     libsdm-color \
     libsdm-colormgr-algo \
     libsdm-diag \
     libsdm-disp-vndapis \
-    libsdmcore \
     libsdmextension \
-    libsdmutils \
     libsecureui \
     libsecureui_svcsock \
     libsensorcal \
@@ -1669,7 +1663,6 @@ PRODUCT_PACKAGES += \
     vendor.display.color@1.0-service \
     vendor.qti.hardware.alarm@1.0-service \
     vendor.qti.hardware.capabilityconfigstore@1.0-service \
-    vendor.qti.hardware.display.composer-service \
     vendor.qti.hardware.iop@2.0-service \
     vendor.qti.hardware.perf@2.2-service \
     vendor.qti.hardware.qccvndhal@1.0-service \
