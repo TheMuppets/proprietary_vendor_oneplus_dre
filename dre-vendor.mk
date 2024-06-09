@@ -1123,7 +1123,9 @@ PRODUCT_PACKAGES += \
     libGPreqcancel_svc \
     libQSEEComAPI \
     libQTEEConnector_vendor \
+    libSecureUILib \
     libSonyIMX471RmscLibrary \
+    libStDrvInt \
     libadaptlaunch \
     libadsp_default_listener \
     libaidenoiser \
@@ -1267,6 +1269,7 @@ PRODUCT_PACKAGES += \
     libsdmcore \
     libsdmextension \
     libsdmutils \
+    libsecureui \
     libsecureui_svcsock \
     libsensorcal \
     libsensorslog \
