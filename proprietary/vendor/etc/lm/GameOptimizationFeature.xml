@@ -21,11 +21,11 @@
     <Name>GameOptimization</Name>
     <Libname>libgameoptfeature.so</Libname>
     <Configs target="holi">
-        <Enable>1</Enable>
+        <Enable>0</Enable>
         <ATML1>1</ATML1>
         <ATML2>1</ATML2>
         <ATML3>1</ATML3>
-        <GFAR>1</GFAR>
+        <GFAR>0</GFAR>
         <AGPE>0</AGPE>
         <IDLE_SENSE>0</IDLE_SENSE>
         <GROUP_UPMIGRATE_PATH>/proc/sys/kernel/sched_group_upmigrate</GROUP_UPMIGRATE_PATH>

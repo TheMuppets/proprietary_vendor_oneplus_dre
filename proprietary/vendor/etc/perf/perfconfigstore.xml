@@ -66,8 +66,9 @@ ________________________________________________________________________________
                 <Prop Name="ro.lmk.enhance_batch_kill" Value="false" />
                 <Prop Name="ro.lmk.enable_watermark_check" Value="true" />
                 <Prop Name="ro.lmk.enable_preferred_apps"   Value="true" />
-                <Prop Name="ro.lmk.use_new_strategy_dup" Value="true" />
+                <!-- <Prop Name="ro.lmk.use_new_strategy_dup" Value="true" /> -->
 		<Prop Name="ro.lmk.super_critical" Value="701" />
+		<Prop Name="ro.lmk.enable_uxmem" Value="true" />
                 <Prop Name="vendor.perf.gestureflingboost.enable" Value="true" />
                 <!--#ifndef  OPLUS_FEATURE_PERFORMANCE-->
                 <!--liuyun@ANDROID.PERFORMANCE, 2020/11/02, Modify for cached app limit for 4350R-->
@@ -76,7 +77,7 @@ ________________________________________________________________________________
                 <Prop Name="ro.vendor.qti.sys.fw.bg_apps_limit" Value="16" />
                 <!--#endif /* OPLUS_FEATURE_PERFORMANCE */ -->
                 <Prop Name="ro.vendor.at_library" Value="libqti-at.so" />
-                <Prop Name="vendor.appcompact.enable_app_compact" Value="false" />
+                <Prop Name="vendor.appcompact.enable_app_compact" Value="true" />
                 <Prop Name="vendor.appcompact.full_compact_type"  Value="2" />
                 <Prop Name="vendor.appcompact.some_compact_type"  Value="4" />
                 <Prop Name="vendor.appcompact.compact_throttle_somesome" Value="5000" />

@@ -114,6 +114,7 @@ need to be added just before the end of it's major group. -->
         <Minor OpcodeValue="0x39" Node="/dev/stune/top-app/schedtune.colocate" Supported="no" />
         <Minor OpcodeValue="0x3A" Node="/dev/cpuctl/top-app/cpu.uclamp.latency_sensitive" />
         <Minor OpcodeValue="0x3B" Node="/dev/cpuctl/foreground/cpu.uclamp.latency_sensitive" />
+        <Minor OpcodeValue="0x3D" Node="/proc/sys/kernel/%s" Supported="no"/>
     <!-- sched major end -->
 
     <!-- core hotplug major start -->

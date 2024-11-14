@@ -1,5 +1,5 @@
 #=============================================================================
-# Copyright (c) 2020 Qualcomm Technologies, Inc.
+# Copyright (c) 2020-2021 Qualcomm Technologies, Inc.
 # All Rights Reserved.
 # Confidential and Proprietary - Qualcomm Technologies, Inc.
 #
@@ -71,6 +71,29 @@ function configure_zram_parameters() {
 	fi
 }
 
+#/*Add swappiness tunning parameters*/
+function oplus_configure_tunning_swappiness() {
+    MemTotalStr=`cat /proc/meminfo | grep MemTotal`
+    MemTotal=${MemTotalStr:16:8}
+
+    if [ $MemTotal -le 6291456 ]; then
+        echo 0 > /proc/sys/vm/swappiness_threshold1_size
+        echo 0 > /proc/sys/vm/swappiness_threshold1_size
+        echo 0 > /proc/sys/vm/vm_swappiness_threshold2
+        echo 0 > /proc/sys/vm/swappiness_threshold2_size
+    elif [ $MemTotal -le 8388608 ]; then
+        echo 100 > /proc/sys/vm/vm_swappiness_threshold1
+        echo 2000 > /proc/sys/vm/swappiness_threshold1_size
+        echo 120 > /proc/sys/vm/vm_swappiness_threshold2
+        echo 1500 > /proc/sys/vm/swappiness_threshold2_size
+    elif [ $MemTotal -le 12582912 ]; then
+        echo 120 > /proc/sys/vm/vm_swappiness_threshold1
+        echo 4096 > /proc/sys/vm/swappiness_threshold1_size
+        echo 140 > /proc/sys/vm/vm_swappiness_threshold2
+        echo 2048 > /proc/sys/vm/swappiness_threshold2_size
+    fi
+}
+
 #ifdef OPLUS_FEATURE_ZRAM_OPT
 function oplus_configure_zram_parameters() {
     MemTotalStr=`cat /proc/meminfo | grep MemTotal`
@@ -130,6 +153,32 @@ function oplus_configure_zram_parameters() {
         swapon /dev/block/zram0 -p 32758
     fi
 }
+
+function oplus_configure_hybridswap() {
+	MemTotalStr=`cat /proc/meminfo | grep MemTotal`
+	MemTotal=${MemTotalStr:16:8}
+
+	if [ $MemTotal -le 524288 ]; then
+		echo 180 > /sys/module/zram_opt/parameters/vm_swappiness
+	elif [ $MemTotal -le 1048576 ]; then
+		echo 180 > /sys/module/zram_opt/parameters/vm_swappiness
+	elif [ $MemTotal -le 2097152 ]; then
+		echo 180 > /sys/module/zram_opt/parameters/vm_swappiness
+	elif [ $MemTotal -le 3145728 ]; then
+		echo 180 > /sys/module/zram_opt/parameters/vm_swappiness
+	elif [ $MemTotal -le 4194304 ]; then
+		echo 180 > /sys/module/zram_opt/parameters/vm_swappiness
+	elif [ $MemTotal -le 6291456 ]; then
+		echo 160 > /sys/module/zram_opt/parameters/vm_swappiness
+	else
+		echo 160 > /sys/module/zram_opt/parameters/vm_swappiness
+	fi
+	echo 0 > /proc/sys/vm/page-cluster
+
+	# FIXME: set system memcg pata in init.kernel.post_boot-lahaina.sh temporary
+	echo 500 > /dev/memcg/system/memory.app_score
+	echo systemserver > /dev/memcg/system/memory.name
+}
 #endif /*OPLUS_FEATURE_ZRAM_OPT*/
 
 function configure_read_ahead_kb_values() {
@@ -156,8 +205,32 @@ function configure_read_ahead_kb_values() {
 	done
 }
 
+#/*Add swappiness tunning parameters*/
+function oplus_configure_tunning_swappiness() {
+	MemTotalStr=`cat /proc/meminfo | grep MemTotal`
+	MemTotal=${MemTotalStr:16:8}
+
+	if [ $MemTotal -le 6291456 ]; then
+		echo 0 > /proc/sys/vm/swappiness_threshold1_size
+		echo 0 > /proc/sys/vm/swappiness_threshold1_size
+		echo 0 > /proc/sys/vm/vm_swappiness_threshold2
+		echo 0 > /proc/sys/vm/swappiness_threshold2_size
+	elif [ $MemTotal -le 8388608 ]; then
+		echo 100 > /proc/sys/vm/vm_swappiness_threshold1
+		echo 2000 > /proc/sys/vm/swappiness_threshold1_size
+		echo 120 > /proc/sys/vm/vm_swappiness_threshold2
+		echo 1500 > /proc/sys/vm/swappiness_threshold2_size
+	else
+		echo 100 > /proc/sys/vm/vm_swappiness_threshold1
+		echo 4096 > /proc/sys/vm/swappiness_threshold1_size
+		echo 120 > /proc/sys/vm/vm_swappiness_threshold2
+		echo 2048 > /proc/sys/vm/swappiness_threshold2_size
+	fi
+}
+
 function configure_memory_parameters() {
 	# Set Memory parameters.
+	oplus_configure_tunning_swappiness
 
 	# Set swappiness to 100 for all targets
 	echo 100 > /proc/sys/vm/swappiness
@@ -165,8 +238,20 @@ function configure_memory_parameters() {
 	# Disable wsf for all targets beacause we are using efk.
 	# wsf Range : 1..1000 So set to bare minimum value 1.
 	echo 1 > /proc/sys/vm/watermark_scale_factor
+        echo 15000 > /proc/sys/vm/watermark_boost_factor
 #ifdef OPLUS_FEATURE_ZRAM_OPT
-	oplus_configure_zram_parameters
+# For vts test which has replace system.img
+	ls -l /product | grep '\-\>'
+	if [ $? -eq 0 ]; then
+		oplus_configure_zram_parameters
+	else
+		if [ -f /sys/block/zram0/hybridswap_enable ]; then
+			oplus_configure_hybridswap
+		else
+			oplus_configure_zram_parameters
+		fi
+	fi
+	oplus_configure_tunning_swappiness
 #else
 	#configure_zram_parameters
 #endif
@@ -174,7 +259,7 @@ function configure_memory_parameters() {
 	echo 0 > /proc/sys/vm/page-cluster
 
 	#Spawn 2 kswapd threads which can help in fast reclaiming of pages
-	echo 2 > /proc/sys/vm/kswapd_threads
+	echo 1 > /proc/sys/vm/kswapd_threads
 }
 
 # Core control parameters for silver
@@ -316,3 +401,20 @@ echo N > /sys/module/lpm_levels/parameters/sleep_disabled
 configure_memory_parameters
 
 setprop vendor.post_boot.parsed 1
+
+if [ -f /sys/devices/soc0/chip_family ]; then
+	chipfamily=`cat /sys/devices/soc0/chip_family`
+fi
+
+case "$chipfamily" in
+    "0x73")
+	/vendor/bin/sh /vendor/bin/init.kernel.post_boot-holi.sh
+	;;
+
+    "0x7c")
+	/vendor/bin/sh /vendor/bin/init.kernel.post_boot-blair.sh
+	;;
+     *)
+	echo "***WARNING***: Invalid chip family\n\t No postboot settings applied!!\n"
+	;;
+esac
