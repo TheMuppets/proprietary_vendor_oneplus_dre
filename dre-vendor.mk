@@ -890,6 +890,7 @@ PRODUCT_PACKAGES += \
     libq3dtools_esx \
     android.hardware.bluetooth@1.0-impl-qti \
     vendor.qti.hardware.bluetooth_audio@2.0-impl \
+    vendor.qti.hardware.bluetooth_audio@2.1-impl \
     vendor.qti.hardware.bluetooth_sar@1.1-impl \
     vendor.qti.hardware.btconfigstore@1.0-impl \
     vendor.qti.hardware.btconfigstore@2.0-impl \
@@ -911,6 +912,7 @@ PRODUCT_PACKAGES += \
     libadreno_utils \
     libadsprpc \
     libbluetooth_audio_session_qti \
+    libbluetooth_audio_session_qti_2_1 \
     libbtnv \
     libc2d30_bltlib \
     libcamxexternalformatutils \
@@ -951,6 +953,7 @@ PRODUCT_PACKAGES += \
     libscveObjectTracker \
     libscveObjectTracker_stub \
     libsdsprpc \
+    libsoc_helper \
     libsysmon_cdsp_skel \
     libthermalclient \
     libxml \
@@ -1300,7 +1303,6 @@ PRODUCT_PACKAGES += \
     libsns_low_lat_stream_stub \
     libsnsapi \
     libsnsdiaglog \
-    libsoc_helper \
     libsplh \
     libssc \
     libssc_default_listener \
@@ -1457,7 +1459,6 @@ PRODUCT_PACKAGES += \
     libscveT2T_skel \
     libsns_device_mode_skel \
     libsns_low_lat_stream_skel \
-    com.qualcomm.qti.ant@1.0 \
     libmmosal \
     libmmparser_lite \
     libmmrtpdecoder \
@@ -1502,7 +1503,9 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.fm@1.0 \
     vendor.qti.imsrtpservice@3.0 \
     vendor.qti.imsrtpservice@3.1 \
+    libbluetooth_audio_extend_factory_client \
     libc++_shared \
+    vendor.oplus.hardware.bluetooth_audio_extend@2.1 \
     anc.hal \
     com.qti.sensor.odin_hlt_gc02m1b_mono \
     com.qti.sensor.odin_jk_ov02b10_macro \
