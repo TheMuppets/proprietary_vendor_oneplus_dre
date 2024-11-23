@@ -77,9 +77,9 @@ function configure_read_ahead_kb_values() {
 
 	dmpts=$(ls /sys/block/*/queue/read_ahead_kb | grep -e dm -e mmc)
 
-	# Set 128 for <= 6GB &
-	# set 512 for >= 8GB targets.
-	if [ $MemTotal -le 6291456 ]; then
+	# Set 128 for <= 3GB &
+	# set 512 for >= 4GB targets.
+	if [ $MemTotal -le 3145728 ]; then
 		ra_kb=128
 	else
 		ra_kb=512
@@ -91,92 +91,23 @@ function configure_read_ahead_kb_values() {
 		echo $ra_kb > /sys/block/mmcblk0rpmb/bdi/read_ahead_kb
 	fi
 	for dm in $dmpts; do
-		dm_dev=`echo $dm |cut -d/ -f4`
- 		if [ "$dm_dev" = "" ]; then
- 			is_erofs=""
- 		else
- 			is_erofs=`mount |grep erofs |grep "${dm_dev} "`
- 		fi
-		if [ "$is_erofs" = "" ]; then
-			echo $ra_kb > $dm
-		else
-			echo 128 > $dm
- 		fi
+		echo $ra_kb > $dm
 	done
-}
-
-#/*Add swappiness tunning parameters*/
-function oplus_configure_tunning_swappiness() {
-	MemTotalStr=`cat /proc/meminfo | grep MemTotal`
-	MemTotal=${MemTotalStr:16:8}
-	prjname=`getprop ro.boot.prjname`
-
-	if [ $MemTotal -le 6291456 ]; then
-		echo 0 > /proc/sys/vm/swappiness_threshold1_size
-		echo 0 > /proc/sys/vm/swappiness_threshold1_size
-		echo 0 > /proc/sys/vm/vm_swappiness_threshold2
-		echo 0 > /proc/sys/vm/swappiness_threshold2_size
-	elif [ $MemTotal -le 8388608 ]; then
-		echo 70 > /proc/sys/vm/vm_swappiness_threshold1
-		echo 2000 > /proc/sys/vm/swappiness_threshold1_size
-		echo 90 > /proc/sys/vm/vm_swappiness_threshold2
-		echo 1500 > /proc/sys/vm/swappiness_threshold2_size
-	else
-		echo 100 > /proc/sys/vm/vm_swappiness_threshold1
-		echo 4096 > /proc/sys/vm/swappiness_threshold1_size
-		echo 120 > /proc/sys/vm/vm_swappiness_threshold2
-		echo 2048 > /proc/sys/vm/swappiness_threshold2_size
-	fi
-
-	if [ -n "$prjname" ]; then
-		case $prjname in
-			"21141"|"21341")
-				echo 60 > /proc/sys/vm/vm_swappiness_threshold1
-				echo 2000 > /proc/sys/vm/swappiness_threshold1_size
-				echo 70 > /proc/sys/vm/vm_swappiness_threshold2
-				echo 1500 > /proc/sys/vm/swappiness_threshold2_size
-				# /proc/sys/vm/swappiness is not used in these projects,
-				# /sys/module/zram_opt/parameters/vm_swappiness is used instead.
-                # modify the swappiness vm_swappiness to 160
-				echo 160 > /proc/sys/vm/swappiness
-				echo 160 > /sys/module/zram_opt/parameters/vm_swappiness
-				echo 60 > /sys/module/zram_opt/parameters/direct_vm_swappiness
-				# disable watermark_boost_factor
-				echo 0 > /proc/sys/vm/watermark_boost_factor
-				# only for 6GB/8GB devices
-                # modify the low-high watermark gap to 16M
-				echo 22 > /proc/sys/vm/watermark_scale_factor
-				;;
-			*)
-				echo "$prjname:no special config<oplus vm_swappiness>"
-				;;
-		esac
-	fi
 }
 
 function configure_memory_parameters() {
 	# Set Memory parameters.
-        MemTotalStr=`cat /proc/meminfo | grep MemTotal`
-        MemTotal=${MemTotalStr:16:8}
 
 	# Set swappiness to 100 for all targets
 	echo 100 > /proc/sys/vm/swappiness
 
 	# Disable wsf for all targets beacause we are using efk.
 	# wsf Range : 1..1000 So set to bare minimum value 1.
-	if [ $MemTotal -le 8388608 ]; then
-		echo 25 > /proc/sys/vm/watermark_scale_factor
-	else
-		echo 16 > /proc/sys/vm/watermark_scale_factor
-	fi
-	oplus_configure_tunning_swappiness
-
-	if [ ! -f /sys/block/zram0/hybridswap_enable ]; then
-	    configure_zram_parameters
-	fi
+	echo 1 > /proc/sys/vm/watermark_scale_factor
+	configure_zram_parameters
 	configure_read_ahead_kb_values
 
-	#Spawn 2 kswapd threads which can help in fast reclaiming of pages
+	#Spawn 1 kswapd threads which can help in fast reclaiming of pages
 	echo 1 > /proc/sys/vm/kswapd_threads
 }
 
@@ -208,8 +139,8 @@ echo 5 > /proc/sys/kernel/sched_ravg_window_nr_ticks
 echo 20000000 > /proc/sys/kernel/sched_task_unfilter_period
 
 # cpuset parameters
-echo 0-3 > /dev/cpuset/background/cpus
-echo 0-3 > /dev/cpuset/system-background/cpus
+echo 0-5 > /dev/cpuset/background/cpus
+echo 0-5 > /dev/cpuset/system-background/cpus
 
 # Turn off scheduler boost at the end
 echo 0 > /proc/sys/kernel/sched_boost
@@ -218,14 +149,14 @@ echo 0 > /proc/sys/kernel/sched_boost
 echo "schedutil" > /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
 echo 0 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/down_rate_limit_us
 echo 0 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/up_rate_limit_us
-echo 1324800 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/hispeed_freq
+echo 1113600 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/hispeed_freq
 echo 576000 > /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq
 
 # configure governor settings for gold cluster
 echo "schedutil" > /sys/devices/system/cpu/cpufreq/policy6/scaling_governor
 echo 0 > /sys/devices/system/cpu/cpufreq/policy6/schedutil/down_rate_limit_us
 echo 0 > /sys/devices/system/cpu/cpufreq/policy6/schedutil/up_rate_limit_us
-echo 1401600 > /sys/devices/system/cpu/cpufreq/policy6/schedutil/hispeed_freq
+echo 1228800 > /sys/devices/system/cpu/cpufreq/policy6/schedutil/hispeed_freq
 echo 691200 > /sys/devices/system/cpu/cpufreq/policy6/scaling_min_freq
 
 # Colocation V3 settings

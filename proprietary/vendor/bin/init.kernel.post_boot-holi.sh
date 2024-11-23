@@ -71,89 +71,6 @@ function configure_zram_parameters() {
 	fi
 }
 
-#/*Add swappiness tunning parameters*/
-function oplus_configure_tunning_swappiness() {
-	MemTotalStr=`cat /proc/meminfo | grep MemTotal`
-	MemTotal=${MemTotalStr:16:8}
-
-	if [ $MemTotal -le 6291456 ]; then
-		echo 0 > /proc/sys/vm/swappiness_threshold1_size
-		echo 0 > /proc/sys/vm/swappiness_threshold1_size
-		echo 0 > /proc/sys/vm/vm_swappiness_threshold2
-		echo 0 > /proc/sys/vm/swappiness_threshold2_size
-	elif [ $MemTotal -le 8388608 ]; then
-		echo 100 > /proc/sys/vm/vm_swappiness_threshold1
-		echo 2000 > /proc/sys/vm/swappiness_threshold1_size
-		echo 120 > /proc/sys/vm/vm_swappiness_threshold2
-		echo 1500 > /proc/sys/vm/swappiness_threshold2_size
-	else
-		echo 100 > /proc/sys/vm/vm_swappiness_threshold1
-		echo 4096 > /proc/sys/vm/swappiness_threshold1_size
-		echo 120 > /proc/sys/vm/vm_swappiness_threshold2
-		echo 2048 > /proc/sys/vm/swappiness_threshold2_size
-	fi
-}
-
-#ifdef OPLUS_FEATURE_ZRAM_OPT
-function oppo_configure_zram_parameters() {
-    MemTotalStr=`cat /proc/meminfo | grep MemTotal`
-    MemTotal=${MemTotalStr:16:8}
-
-    echo lz4 > /sys/block/zram0/comp_algorithm
-    echo 160 > /sys/module/zram_opt/parameters/vm_swappiness
-    echo 60 > /sys/module/zram_opt/parameters/direct_vm_swappiness
-    echo 0 > /proc/sys/vm/page-cluster
-
-    if [ -f /sys/block/zram0/disksize ]; then
-        if [ -f /sys/block/zram0/use_dedup ]; then
-            echo 1 > /sys/block/zram0/use_dedup
-        fi
-
-        if [ $MemTotal -le 524288 ]; then
-            #config 384MB zramsize with ramsize 512MB
-            echo 402653184 > /sys/block/zram0/disksize
-        elif [ $MemTotal -le 1048576 ]; then
-            #config 768MB zramsize with ramsize 1GB
-            echo 805306368 > /sys/block/zram0/disksize
-        elif [ $MemTotal -le 2097152 ]; then
-            #config 1GB+256MB zramsize with ramsize 2GB
-            echo lz4 > /sys/block/zram0/comp_algorithm
-            echo 1342177280 > /sys/block/zram0/disksize
-        elif [ $MemTotal -le 3145728 ]; then
-            #config 1GB+512MB zramsize with ramsize 3GB
-            echo 1610612736 > /sys/block/zram0/disksize
-        elif [ $MemTotal -le 4194304 ]; then
-            #config 2GB+512MB zramsize with ramsize 4GB
-            echo 2684354560 > /sys/block/zram0/disksize
-        elif [ $MemTotal -le 6291456 ]; then
-            #config 3GB zramsize with ramsize 6GB
-            echo 3221225472 > /sys/block/zram0/disksize
-        else
-            #config 4GB zramsize with ramsize >=8GB
-            echo 4294967296 > /sys/block/zram0/disksize
-        fi
-        mkswap /dev/block/zram0
-        swapon /dev/block/zram0 -p 32758
-    fi
-}
-
-function oplus_configure_hybridswap() {
-	kernel_version=`uname -r`
-
-	if [[ "$kernel_version" == "5.10"* ]]; then
-		echo 160 > /sys/module/oplus_bsp_zram_opt/parameters/vm_swappiness
-	else
-		echo 160 > /sys/module/zram_opt/parameters/vm_swappiness
-	fi
-
-	echo 0 > /proc/sys/vm/page-cluster
-
-	# FIXME: set system memcg pata in init.kernel.post_boot-lahaina.sh temporary
-	echo 500 > /dev/memcg/system/memory.app_score
-	echo systemserver > /dev/memcg/system/memory.name
-}
-#endif /*OPLUS_FEATURE_ZRAM_OPT*/
-
 function configure_read_ahead_kb_values() {
 	MemTotalStr=`cat /proc/meminfo | grep MemTotal`
 	MemTotal=${MemTotalStr:16:8}
@@ -180,36 +97,19 @@ function configure_read_ahead_kb_values() {
 
 function configure_memory_parameters() {
 	# Set Memory parameters.
-        MemTotalStr=`cat /proc/meminfo | grep MemTotal`
-        MemTotal=${MemTotalStr:16:8}
 
-#ifdef OPLUS_FEATURE_ZRAM_OPT
-	# For vts test which has replace system.img
-	ls -l /product | grep '\-\>'
-	if [ $? -eq 0 ]; then
-		oplus_configure_zram_parameters
-	else
-		if [ -f /sys/block/zram0/hybridswap_enable ]; then
-			oplus_configure_hybridswap
-		else
-			oplus_configure_zram_parameters
-		fi
-	fi
-#else
-#       configure_zram_parameters
-#endif /*OPLUS_FEATURE_ZRAM_OPT*/
+	# Set swappiness to 100 for all targets
+	echo 100 > /proc/sys/vm/swappiness
+
+	# Disable wsf for all targets beacause we are using efk.
+	# wsf Range : 1..1000 So set to bare minimum value 1.
+	echo 1 > /proc/sys/vm/watermark_scale_factor
+	configure_zram_parameters
 	configure_read_ahead_kb_values
-	echo 0 > /proc/sys/vm/page-cluster
 
-        if [ $MemTotal -le 8388608 ]; then
-		echo 32 > /proc/sys/vm/watermark_scale_factor
-	else
-		echo 16 > /proc/sys/vm/watermark_scale_factor
-	fi
-	echo 0 > /proc/sys/vm/watermark_boost_factor
-#ifndef OPLUS_FEATURE_ZRAM_OPT
-#	echo 100 > /proc/sys/vm/swappiness
-#endif /*OPLUS_FEATURE_ZRAM_OPT*/
+	#Spawn 2 kswapd threads which can help in fast reclaiming of pages
+	#use 1 to improve performance
+	echo 1 > /proc/sys/vm/kswapd_threads
 }
 
 # Core control parameters for silver
@@ -240,7 +140,7 @@ echo 5 > /proc/sys/kernel/sched_ravg_window_nr_ticks
 echo 20000000 > /proc/sys/kernel/sched_task_unfilter_period
 
 # cpuset parameters
-echo 0-5 > /dev/cpuset/background/cpus
+echo 0-3 > /dev/cpuset/background/cpus
 echo 0-5 > /dev/cpuset/system-background/cpus
 
 # Turn off scheduler boost at the end
