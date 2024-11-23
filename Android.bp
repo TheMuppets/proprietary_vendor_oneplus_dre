@@ -9940,7 +9940,6 @@ cc_prebuilt_library_shared {
             ],
             shared_libs: [
                 "libhidlbase",
-                "libhidltransport",
                 "libutils",
                 "liblog",
                 "libcutils",
@@ -16240,7 +16239,6 @@ cc_prebuilt_library_shared {
                 "libsns_fastRPC_util",
                 "libsensorslog",
                 "libhardware",
-                "libhidltransport",
                 "libhidlbase",
                 "android.hardware.sensors@2.0",
                 "android.hardware.sensors@2.0-ScopedWakelock",
@@ -25304,7 +25302,6 @@ cc_prebuilt_binary {
                 "libbase",
                 "libutils",
                 "libhidlbase",
-                "libhidltransport",
                 "vendor.qti.hardware.sensorscalibrate@1.0",
                 "libc++",
                 "libc",

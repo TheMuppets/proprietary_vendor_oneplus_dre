@@ -6,7 +6,7 @@
 // developers may choose to define Sensor-specific message API for any
 // new/Sensor-specific functionality.
 //
-// Copyright (c) 2016-2020 Qualcomm Technologies, Inc.
+// Copyright (c) 2016-2021 Qualcomm Technologies, Inc.
 // All Rights Reserved.
 // Confidential and Proprietary - Qualcomm Technologies, Inc.
 
@@ -209,13 +209,23 @@ enum sns_std_sensor_attr_id
   // of rates published in attribute SNS_STD_SENSOR_ATTRID_RATES.
   // This is supported for internal clients only. External clients shall not use this API.
   SNS_STD_SENSOR_ATTRID_ADDITIONAL_LOW_LATENCY_RATES = 25;
-  
+
   // OPTIONAL
   // Boolean
   // Boolean: True if the sensor supports passive request, False otherwise.
   // If this attribute is not supported, then the sensor does not support passive requests.
   // Sensors that do not support passive requests, will service all requests as active requests.
   SNS_STD_SENSOR_ATTRID_PASSIVE_REQUEST = 26;
+
+  // OPTIONAL
+  // float
+  // direct channel supported max sample rate in Hz
+  SNS_STD_SENSOR_ATTRID_DIRECT_CHANNEL_MAX_SAMPLE_RATE = 27;
+
+  // OPTIONAL
+  // float
+  // direct channel supported max report rate in Hz
+  SNS_STD_SENSOR_ATTRID_DIRECT_CHANNEL_MAX_REPORT_RATE = 28;
 }
 
 // Sensor stream configuration request
