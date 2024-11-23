@@ -438,28 +438,6 @@ PRODUCT_COPY_FILES += \
     vendor/oneplus/dre/proprietary/odm/firmware/tp/133144/LIMIT_NF_ILI7807S_TIANMA.img:$(TARGET_COPY_OUT_ODM)/firmware/tp/133144/LIMIT_NF_ILI7807S_TIANMA.img \
     vendor/oneplus/dre/proprietary/odm/firmware/tp/133144/LIMIT_NF_NT36672C_DSJM.img:$(TARGET_COPY_OUT_ODM)/firmware/tp/133144/LIMIT_NF_NT36672C_DSJM.img \
     vendor/oneplus/dre/proprietary/odm/firmware/tp/133144/LIMIT_NF_NT36672C_TIANMA.img:$(TARGET_COPY_OUT_ODM)/firmware/tp/133144/LIMIT_NF_NT36672C_TIANMA.img \
-    vendor/oneplus/dre/proprietary/odm/firmware/tp/133180/FW_NF_ILI7807S_TIANMA.img:$(TARGET_COPY_OUT_ODM)/firmware/tp/133180/FW_NF_ILI7807S_TIANMA.img \
-    vendor/oneplus/dre/proprietary/odm/firmware/tp/133180/FW_NF_ILI7807S_TIANMA_FAE.img:$(TARGET_COPY_OUT_ODM)/firmware/tp/133180/FW_NF_ILI7807S_TIANMA_FAE.img \
-    vendor/oneplus/dre/proprietary/odm/firmware/tp/133180/FW_NF_NT36672C_DSJM.img:$(TARGET_COPY_OUT_ODM)/firmware/tp/133180/FW_NF_NT36672C_DSJM.img \
-    vendor/oneplus/dre/proprietary/odm/firmware/tp/133180/FW_NF_NT36672C_DSJM_FAE.img:$(TARGET_COPY_OUT_ODM)/firmware/tp/133180/FW_NF_NT36672C_DSJM_FAE.img \
-    vendor/oneplus/dre/proprietary/odm/firmware/tp/133180/FW_NF_NT36672C_DSJM_TEST.bin:$(TARGET_COPY_OUT_ODM)/firmware/tp/133180/FW_NF_NT36672C_DSJM_TEST.bin \
-    vendor/oneplus/dre/proprietary/odm/firmware/tp/133180/FW_NF_NT36672C_TIANMA.img:$(TARGET_COPY_OUT_ODM)/firmware/tp/133180/FW_NF_NT36672C_TIANMA.img \
-    vendor/oneplus/dre/proprietary/odm/firmware/tp/133180/FW_NF_NT36672C_TIANMA_FAE.img:$(TARGET_COPY_OUT_ODM)/firmware/tp/133180/FW_NF_NT36672C_TIANMA_FAE.img \
-    vendor/oneplus/dre/proprietary/odm/firmware/tp/133180/FW_NF_NT36672C_TIANMA_TEST.bin:$(TARGET_COPY_OUT_ODM)/firmware/tp/133180/FW_NF_NT36672C_TIANMA_TEST.bin \
-    vendor/oneplus/dre/proprietary/odm/firmware/tp/133180/LIMIT_NF_ILI7807S_TIANMA.img:$(TARGET_COPY_OUT_ODM)/firmware/tp/133180/LIMIT_NF_ILI7807S_TIANMA.img \
-    vendor/oneplus/dre/proprietary/odm/firmware/tp/133180/LIMIT_NF_NT36672C_DSJM.img:$(TARGET_COPY_OUT_ODM)/firmware/tp/133180/LIMIT_NF_NT36672C_DSJM.img \
-    vendor/oneplus/dre/proprietary/odm/firmware/tp/133180/LIMIT_NF_NT36672C_TIANMA.img:$(TARGET_COPY_OUT_ODM)/firmware/tp/133180/LIMIT_NF_NT36672C_TIANMA.img \
-    vendor/oneplus/dre/proprietary/odm/firmware/tp/20121/FW_NF_ILI7807S_TIANMA.img:$(TARGET_COPY_OUT_ODM)/firmware/tp/20121/FW_NF_ILI7807S_TIANMA.img \
-    vendor/oneplus/dre/proprietary/odm/firmware/tp/20121/FW_NF_ILI7807S_TIANMA_FAE.img:$(TARGET_COPY_OUT_ODM)/firmware/tp/20121/FW_NF_ILI7807S_TIANMA_FAE.img \
-    vendor/oneplus/dre/proprietary/odm/firmware/tp/20121/FW_NF_NT36672C_DSJM.img:$(TARGET_COPY_OUT_ODM)/firmware/tp/20121/FW_NF_NT36672C_DSJM.img \
-    vendor/oneplus/dre/proprietary/odm/firmware/tp/20121/FW_NF_NT36672C_DSJM_FAE.img:$(TARGET_COPY_OUT_ODM)/firmware/tp/20121/FW_NF_NT36672C_DSJM_FAE.img \
-    vendor/oneplus/dre/proprietary/odm/firmware/tp/20121/FW_NF_NT36672C_DSJM_TEST.bin:$(TARGET_COPY_OUT_ODM)/firmware/tp/20121/FW_NF_NT36672C_DSJM_TEST.bin \
-    vendor/oneplus/dre/proprietary/odm/firmware/tp/20121/FW_NF_NT36672C_TIANMA.img:$(TARGET_COPY_OUT_ODM)/firmware/tp/20121/FW_NF_NT36672C_TIANMA.img \
-    vendor/oneplus/dre/proprietary/odm/firmware/tp/20121/FW_NF_NT36672C_TIANMA_FAE.img:$(TARGET_COPY_OUT_ODM)/firmware/tp/20121/FW_NF_NT36672C_TIANMA_FAE.img \
-    vendor/oneplus/dre/proprietary/odm/firmware/tp/20121/FW_NF_NT36672C_TIANMA_TEST.bin:$(TARGET_COPY_OUT_ODM)/firmware/tp/20121/FW_NF_NT36672C_TIANMA_TEST.bin \
-    vendor/oneplus/dre/proprietary/odm/firmware/tp/20121/LIMIT_NF_ILI7807S_TIANMA.img:$(TARGET_COPY_OUT_ODM)/firmware/tp/20121/LIMIT_NF_ILI7807S_TIANMA.img \
-    vendor/oneplus/dre/proprietary/odm/firmware/tp/20121/LIMIT_NF_NT36672C_DSJM.img:$(TARGET_COPY_OUT_ODM)/firmware/tp/20121/LIMIT_NF_NT36672C_DSJM.img \
-    vendor/oneplus/dre/proprietary/odm/firmware/tp/20121/LIMIT_NF_NT36672C_TIANMA.img:$(TARGET_COPY_OUT_ODM)/firmware/tp/20121/LIMIT_NF_NT36672C_TIANMA.img \
     vendor/oneplus/dre/proprietary/odm/lib64/camera/com.qti.sensormodule.odin_hlt_gc02m1b_mono.bin:$(TARGET_COPY_OUT_ODM)/lib64/camera/com.qti.sensormodule.odin_hlt_gc02m1b_mono.bin \
     vendor/oneplus/dre/proprietary/odm/lib64/camera/com.qti.sensormodule.odin_jk_ov02b10_macro.bin:$(TARGET_COPY_OUT_ODM)/lib64/camera/com.qti.sensormodule.odin_jk_ov02b10_macro.bin \
     vendor/oneplus/dre/proprietary/odm/lib64/camera/com.qti.sensormodule.odin_qt_ov13b10_rear.bin:$(TARGET_COPY_OUT_ODM)/lib64/camera/com.qti.sensormodule.odin_qt_ov13b10_rear.bin \
@@ -1732,6 +1710,17 @@ PRODUCT_PACKAGES += \
     oplus_sensor_fb
 
 PRODUCT_PACKAGES += \
+    odm_firmware_tp_133180_FW_NF_ILI7807S_TIANMA_img \
+    odm_firmware_tp_133180_FW_NF_ILI7807S_TIANMA_FAE_img \
+    odm_firmware_tp_133180_FW_NF_NT36672C_DSJM_img \
+    odm_firmware_tp_133180_FW_NF_NT36672C_DSJM_FAE_img \
+    odm_firmware_tp_133180_FW_NF_NT36672C_DSJM_TEST_bin \
+    odm_firmware_tp_133180_FW_NF_NT36672C_TIANMA_img \
+    odm_firmware_tp_133180_FW_NF_NT36672C_TIANMA_FAE_img \
+    odm_firmware_tp_133180_FW_NF_NT36672C_TIANMA_TEST_bin \
+    odm_firmware_tp_133180_LIMIT_NF_ILI7807S_TIANMA_img \
+    odm_firmware_tp_133180_LIMIT_NF_NT36672C_DSJM_img \
+    odm_firmware_tp_133180_LIMIT_NF_NT36672C_TIANMA_img \
     system_ext_priv-app_ims_lib_arm64_libimscamera_jni_so \
     system_ext_priv-app_ims_lib_arm64_libimsmedia_jni_so \
     system_ext_priv-app_WfdService_lib_arm64_libwfdnative_so \

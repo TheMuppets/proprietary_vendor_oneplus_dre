@@ -26957,6 +26957,83 @@ cc_prebuilt_binary {
 }
 
 install_symlink {
+    name: "odm_firmware_tp_133180_FW_NF_ILI7807S_TIANMA_img",
+    device_specific: true,
+    installed_location: "firmware/tp/133180/FW_NF_ILI7807S_TIANMA.img",
+    symlink_target: "/odm/firmware/tp/133144/FW_NF_ILI7807S_TIANMA.img",
+}
+
+install_symlink {
+    name: "odm_firmware_tp_133180_FW_NF_ILI7807S_TIANMA_FAE_img",
+    device_specific: true,
+    installed_location: "firmware/tp/133180/FW_NF_ILI7807S_TIANMA_FAE.img",
+    symlink_target: "/odm/firmware/tp/133144/FW_NF_ILI7807S_TIANMA_FAE.img",
+}
+
+install_symlink {
+    name: "odm_firmware_tp_133180_FW_NF_NT36672C_DSJM_img",
+    device_specific: true,
+    installed_location: "firmware/tp/133180/FW_NF_NT36672C_DSJM.img",
+    symlink_target: "/odm/firmware/tp/133144/FW_NF_NT36672C_DSJM.img",
+}
+
+install_symlink {
+    name: "odm_firmware_tp_133180_FW_NF_NT36672C_DSJM_FAE_img",
+    device_specific: true,
+    installed_location: "firmware/tp/133180/FW_NF_NT36672C_DSJM_FAE.img",
+    symlink_target: "/odm/firmware/tp/133144/FW_NF_NT36672C_DSJM_FAE.img",
+}
+
+install_symlink {
+    name: "odm_firmware_tp_133180_FW_NF_NT36672C_DSJM_TEST_bin",
+    device_specific: true,
+    installed_location: "firmware/tp/133180/FW_NF_NT36672C_DSJM_TEST.bin",
+    symlink_target: "/odm/firmware/tp/133144/FW_NF_NT36672C_DSJM_TEST.bin",
+}
+
+install_symlink {
+    name: "odm_firmware_tp_133180_FW_NF_NT36672C_TIANMA_img",
+    device_specific: true,
+    installed_location: "firmware/tp/133180/FW_NF_NT36672C_TIANMA.img",
+    symlink_target: "/odm/firmware/tp/133144/FW_NF_NT36672C_TIANMA.img",
+}
+
+install_symlink {
+    name: "odm_firmware_tp_133180_FW_NF_NT36672C_TIANMA_FAE_img",
+    device_specific: true,
+    installed_location: "firmware/tp/133180/FW_NF_NT36672C_TIANMA_FAE.img",
+    symlink_target: "/odm/firmware/tp/133144/FW_NF_NT36672C_TIANMA_FAE.img",
+}
+
+install_symlink {
+    name: "odm_firmware_tp_133180_FW_NF_NT36672C_TIANMA_TEST_bin",
+    device_specific: true,
+    installed_location: "firmware/tp/133180/FW_NF_NT36672C_TIANMA_TEST.bin",
+    symlink_target: "/odm/firmware/tp/133144/FW_NF_NT36672C_TIANMA_TEST.bin",
+}
+
+install_symlink {
+    name: "odm_firmware_tp_133180_LIMIT_NF_ILI7807S_TIANMA_img",
+    device_specific: true,
+    installed_location: "firmware/tp/133180/LIMIT_NF_ILI7807S_TIANMA.img",
+    symlink_target: "/odm/firmware/tp/133144/LIMIT_NF_ILI7807S_TIANMA.img",
+}
+
+install_symlink {
+    name: "odm_firmware_tp_133180_LIMIT_NF_NT36672C_DSJM_img",
+    device_specific: true,
+    installed_location: "firmware/tp/133180/LIMIT_NF_NT36672C_DSJM.img",
+    symlink_target: "/odm/firmware/tp/133144/LIMIT_NF_NT36672C_DSJM.img",
+}
+
+install_symlink {
+    name: "odm_firmware_tp_133180_LIMIT_NF_NT36672C_TIANMA_img",
+    device_specific: true,
+    installed_location: "firmware/tp/133180/LIMIT_NF_NT36672C_TIANMA.img",
+    symlink_target: "/odm/firmware/tp/133144/LIMIT_NF_NT36672C_TIANMA.img",
+}
+
+install_symlink {
     name: "system_ext_priv-app_ims_lib_arm64_libimscamera_jni_so",
     system_ext_specific: true,
     installed_location: "priv-app/ims/lib/arm64/libimscamera_jni.so",
