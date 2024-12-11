@@ -21367,6 +21367,7 @@ cc_prebuilt_library_shared {
             ],
             shared_libs: [
                 "libinput_shim",
+                "libbinder_shim",
                 "libandroid_runtime",
                 "libui",
                 "libinput",
