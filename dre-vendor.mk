@@ -1497,6 +1497,8 @@ PRODUCT_PACKAGES += \
     vendor.oplus.hardware.bluetooth_audio_extend@2.1 \
     lib_lvacfs \
     liblvacfs_wrapper \
+    liblvimfs \
+    liblvimfs_wrapper \
     anc.hal \
     com.qti.sensor.odin_hlt_gc02m1b_mono \
     com.qti.sensor.odin_jk_ov02b10_macro \
