@@ -11139,6 +11139,7 @@ cc_prebuilt_library_shared {
                 "vendor.qti.latency@2.1",
                 "vendor.qti.hardware.mwqemadapter@1.0",
                 "vendor.qti.data.mwqem@1.0",
+                "libwpa_client",
                 "libc++",
                 "libc",
                 "libm",
@@ -11147,7 +11148,6 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -15564,6 +15564,7 @@ cc_prebuilt_library_shared {
                 "vendor.qti.hardware.data.cne.internal.server@1.0",
                 "vendor.qti.hardware.data.cne.internal.api@1.0",
                 "vendor.qti.hardware.mwqemadapter@1.0",
+                "libwpa_client",
                 "libc++",
                 "libc",
                 "libm",
@@ -15572,7 +15573,6 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -25354,6 +25354,7 @@ cc_prebuilt_binary {
                 "libgps.utils",
                 "liblog",
                 "libnl",
+                "libwpa_client",
                 "libqmi_cci",
                 "libqmi_common_so",
                 "libdiag",
@@ -25365,7 +25366,6 @@ cc_prebuilt_binary {
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
     strip: {
         none: true,
     },
@@ -25448,6 +25448,7 @@ cc_prebuilt_binary {
                 "libidl",
                 "libandroid_net",
                 "libhidlbase",
+                "libwpa_client",
                 "libc++",
                 "libc",
                 "libm",
@@ -25456,7 +25457,6 @@ cc_prebuilt_binary {
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
     strip: {
         none: true,
     },
