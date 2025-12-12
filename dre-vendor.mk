@@ -1435,27 +1435,27 @@ PRODUCT_PACKAGES += \
     vendor.qti.memory.pasrmanager@1.0 \
     vendor.qti.memory.pasrmanager@1.1 \
     vendor.qti.power.pasrmanager@1.0 \
-    bm2n06 \
-    bm2n08 \
-    bm2n12 \
-    bm2n13 \
-    bm2n14 \
-    bm2n15 \
-    libadsp_jpege_skel \
-    libapps_mem_heap \
-    libbitml_nsp_skel \
-    libbitml_nsp_v2_skel \
-    libcamera_nn_skel \
-    libdspCV_skel \
-    libdsp_streamer_binning \
-    libfastcvadsp \
-    libfastcvdsp_skel \
-    libhdr_skel_vendor \
-    libmctfengine_skel \
-    libscveObjectSegmentation_skel \
-    libscveT2T_skel \
-    libsns_device_mode_skel \
-    libsns_low_lat_stream_skel \
+    vendor_lib_rfsa_adsp_bm2n06_bin \
+    vendor_lib_rfsa_adsp_bm2n08_bin \
+    vendor_lib_rfsa_adsp_bm2n12_bin \
+    vendor_lib_rfsa_adsp_bm2n13_bin \
+    vendor_lib_rfsa_adsp_bm2n14_bin \
+    vendor_lib_rfsa_adsp_bm2n15_bin \
+    vendor_lib_rfsa_adsp_libadsp_jpege_skel_so \
+    vendor_lib_rfsa_adsp_libapps_mem_heap_so \
+    vendor_lib_rfsa_adsp_libbitml_nsp_skel_so \
+    vendor_lib_rfsa_adsp_libbitml_nsp_v2_skel_so \
+    vendor_lib_rfsa_adsp_libcamera_nn_skel_so \
+    vendor_lib_rfsa_adsp_libdspCV_skel_so \
+    vendor_lib_rfsa_adsp_libdsp_streamer_binning_so \
+    vendor_lib_rfsa_adsp_libfastcvadsp_so \
+    vendor_lib_rfsa_adsp_libfastcvdsp_skel_so \
+    vendor_lib_rfsa_adsp_libhdr_skel_so \
+    vendor_lib_rfsa_adsp_libmctfengine_skel_so \
+    vendor_lib_rfsa_adsp_libscveObjectSegmentation_skel_so \
+    vendor_lib_rfsa_adsp_libscveT2T_skel_so \
+    vendor_lib_rfsa_adsp_libsns_device_mode_skel_so \
+    vendor_lib_rfsa_adsp_libsns_low_lat_stream_skel_so \
     vendor.qti.diaghal@1.0 \
     com.qualcomm.qti.dpm.api@1.0 \
     fm_helium \
@@ -1588,30 +1588,30 @@ PRODUCT_PACKAGES += \
     vendor.oplus.hardware.orms@1.0 \
     vendor.oplus.hardware.performance-V1-ndk_platform \
     vendor.oplus.hardware.radio@1.0 \
-    capi_v2_aptX_CLHDAD_Encoder \
-    libVDHexagonBlurless_v2_skel \
-    libarcsoft_dualcam_refocus_skel \
-    libarcsoft_hdrplus_hvx_skel \
-    libarcsoft_portraitSN_hvx_skel \
-    libarcsoft_portraitsn_hvx_skel \
-    libcalculator_skel \
-    libhdr_skel \
-    libhvxFaceBeautyPre_skel \
-    libktvdrc \
-    libktveffect \
-    libktveq \
-    libktvns \
-    libktvpitchshift \
-    libktvreverb \
-    libktvvolume \
-    libsnpe_dsp_domains_skel \
-    libsnpe_dsp_skel \
-    libsnpe_dsp_v65_domains_v2_skel \
-    libsnpe_dsp_v66_domains_v2_skel \
-    libsnpe_dsp_v68_domains_v3_skel \
-    libvdblurless_4.6.10T_skel \
-    libvdblurless_skel \
-    libvdsuperphoto_skel \
+    odm_lib_rfsa_adsp_capi_v2_aptX_CLHDAD_Encoder_so \
+    odm_lib_rfsa_adsp_libVDHexagonBlurless_v2_skel_so \
+    odm_lib_rfsa_adsp_libarcsoft_dualcam_refocus_skel_so \
+    odm_lib_rfsa_adsp_libarcsoft_hdrplus_hvx_skel_so \
+    odm_lib_rfsa_adsp_libarcsoft_portraitSN_hvx_skel_so \
+    odm_lib_rfsa_adsp_libarcsoft_portraitsn_hvx_skel_so \
+    odm_lib_rfsa_adsp_libcalculator_skel_so \
+    odm_lib_rfsa_adsp_libhdr_skel_so \
+    odm_lib_rfsa_adsp_libhvxFaceBeautyPre_skel_so \
+    odm_lib_rfsa_adsp_libktvdrc_so \
+    odm_lib_rfsa_adsp_libktveffect_so \
+    odm_lib_rfsa_adsp_libktveq_so \
+    odm_lib_rfsa_adsp_libktvns_so \
+    odm_lib_rfsa_adsp_libktvpitchshift_so \
+    odm_lib_rfsa_adsp_libktvreverb_so \
+    odm_lib_rfsa_adsp_libktvvolume_so \
+    odm_lib_rfsa_adsp_libsnpe_dsp_domains_skel_so \
+    odm_lib_rfsa_adsp_libsnpe_dsp_skel_so \
+    odm_lib_rfsa_adsp_libsnpe_dsp_v65_domains_v2_skel_so \
+    odm_lib_rfsa_adsp_libsnpe_dsp_v66_domains_v2_skel_so \
+    odm_lib_rfsa_adsp_libsnpe_dsp_v68_domains_v3_skel_so \
+    odm_lib_rfsa_adsp_libvdblurless_4_6_10T_skel_so \
+    odm_lib_rfsa_adsp_libvdblurless_skel_so \
+    odm_lib_rfsa_adsp_libvdsuperphoto_skel_so \
     CACertService \
     CneApp \
     IWlanService \
