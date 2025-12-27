@@ -606,10 +606,6 @@ PRODUCT_COPY_FILES += \
     vendor/oneplus/dre/proprietary/vendor/etc/izat.conf:$(TARGET_COPY_OUT_VENDOR)/etc/izat.conf \
     vendor/oneplus/dre/proprietary/vendor/etc/libnfc-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf \
     vendor/oneplus/dre/proprietary/vendor/etc/libnfc-st21h_conf.txt:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-st21h_conf.txt \
-    vendor/oneplus/dre/proprietary/vendor/etc/lm/AdaptLaunchFeature.xml:$(TARGET_COPY_OUT_VENDOR)/etc/lm/AdaptLaunchFeature.xml \
-    vendor/oneplus/dre/proprietary/vendor/etc/lm/AppClassifierFeature.xml:$(TARGET_COPY_OUT_VENDOR)/etc/lm/AppClassifierFeature.xml \
-    vendor/oneplus/dre/proprietary/vendor/etc/lm/GameOptimizationFeature.xml:$(TARGET_COPY_OUT_VENDOR)/etc/lm/GameOptimizationFeature.xml \
-    vendor/oneplus/dre/proprietary/vendor/etc/lm/sPLHFeature.xml:$(TARGET_COPY_OUT_VENDOR)/etc/lm/sPLHFeature.xml \
     vendor/oneplus/dre/proprietary/vendor/etc/lowi.conf:$(TARGET_COPY_OUT_VENDOR)/etc/lowi.conf \
     vendor/oneplus/dre/proprietary/vendor/etc/media_blair/video_system_specs.json:$(TARGET_COPY_OUT_VENDOR)/etc/media_blair/video_system_specs.json \
     vendor/oneplus/dre/proprietary/vendor/etc/media_blair_lite/video_system_specs.json:$(TARGET_COPY_OUT_VENDOR)/etc/media_blair_lite/video_system_specs.json \
@@ -1147,11 +1143,9 @@ PRODUCT_PACKAGES += \
     libSecureUILib \
     libSonyIMX471RmscLibrary \
     libStDrvInt \
-    libadaptlaunch \
     libadsp_default_listener \
     libaidenoiser \
     libaoa \
-    libappclassifier \
     libasn1cper \
     libasn1crt \
     libasn1crtx \
@@ -1190,7 +1184,6 @@ PRODUCT_PACKAGES += \
     libdpps \
     libdrmfs \
     libdrmtime \
-    libgameoptfeature \
     libgdtap \
     libgeofencing \
     libgnss \
@@ -1207,7 +1200,6 @@ PRODUCT_PACKAGES += \
     libkeymasterutils \
     liblbs_core \
     liblearningmodule \
-    liblmutils-ns \
     libloadalgo_stub \
     libloc_api_v02 \
     libloc_core \
@@ -1219,8 +1211,6 @@ PRODUCT_PACKAGES += \
     liblowi_wifihal \
     liblqe \
     libmctfengine_stub \
-    libmemperfd \
-    libmeters-ns \
     libmeters \
     libmidasserviceintf \
     libminkdescriptor \
@@ -1272,7 +1262,6 @@ PRODUCT_PACKAGES += \
     libqti-perfd-client \
     libqti-perfd \
     libqti-util \
-    libqti-utils \
     libqtikeymaster4 \
     librcc \
     librcmask \
@@ -1291,7 +1280,6 @@ PRODUCT_PACKAGES += \
     libsecureui_svcsock \
     libsensorcal \
     libsensorslog \
-    libskewknob \
     libslimclient \
     libsnapdragoncolor-manager \
     libsnapdragoncolor-qdcm \
@@ -1300,7 +1288,6 @@ PRODUCT_PACKAGES += \
     libsns_low_lat_stream_stub \
     libsnsapi \
     libsnsdiaglog \
-    libsplh \
     libssc \
     libssc_default_listener \
     libssd \
@@ -1434,7 +1421,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.latency@2.1 \
     vendor.qti.memory.pasrmanager@1.0 \
     vendor.qti.memory.pasrmanager@1.1 \
-    vendor.qti.power.pasrmanager@1.0 \
     vendor_lib_rfsa_adsp_bm2n06_bin \
     vendor_lib_rfsa_adsp_bm2n08_bin \
     vendor_lib_rfsa_adsp_bm2n12_bin \
