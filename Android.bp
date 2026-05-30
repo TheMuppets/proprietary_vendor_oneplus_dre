@@ -15476,31 +15476,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.oplus.hardware.radio-V2-ndk_platform",
-    owner: "oneplus",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/vendor.oplus.hardware.radio-V2-ndk_platform.so",
-            ],
-            shared_libs: [
-                "libbinder_ndk",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "vendor.qti.data.factory@2.0",
     owner: "oneplus",
     strip: {
@@ -22574,31 +22549,6 @@ cc_prebuilt_library_shared {
                 "liblog",
                 "libutils",
                 "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    device_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "vendor.oplus.hardware.performance-V1-ndk_platform",
-    owner: "oneplus",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/odm/lib64/vendor.oplus.hardware.performance-V1-ndk_platform.so",
-            ],
-            shared_libs: [
-                "libbinder_ndk",
                 "libc++",
                 "libc",
                 "libm",
