@@ -1547,7 +1547,6 @@ PRODUCT_PACKAGES += \
     libwvhidl \
     libwvdrmengine \
     vendor.oplus.hardware.appradio@1.0 \
-    vendor.oplus.hardware.commondcs@1.0 \
     vendor.oplus.hardware.ims@1.0 \
     vendor.oplus.hardware.orms@1.0 \
     vendor.oplus.hardware.radio@1.0 \
